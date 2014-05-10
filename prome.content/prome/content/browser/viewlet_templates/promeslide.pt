@@ -1,0 +1,39 @@
+<tal:checkRole condition="python:not request['AUTHENTICATED_USER'].has_role('Manager')">
+          <div id="promeSlide" class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="nivo-slider">
+                  <div class="slider-wrapper theme-default">
+                    <div id="nivoSlider" class="nivoSlider">
+                      <img src="http://web.pm-seminar.tw/data/cht/20140404/20140404wikacg.jpg"
+                           data-thumb="http://web.pm-seminar.tw/data/cht/20140404/20140404wikacg.jpg" alt="" />
+                      <img src="http://web.pm-seminar.tw/data/cht/20140321/20140321xwauz2.jpg"
+                           data-thumb="http://web.pm-seminar.tw/data/cht/20140404/20140404wikacg.jpg" alt="" />
+                    </div>
+                    <div id="htmlcaption" class="nivo-html-caption"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="home-intro home-intro-compact">
+                  <div class="row">
+                    <div class="col-md-8">
+                      <p><span tal:replace="string:The fastest way to grow your business with the leader試試 in">
+                        The fastest way to grow your business with the leader in</span><em>Technology.中文呢？</em>
+                        <span>Check out our options and features included.</span>
+                      </p>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="get-started">
+                        <a href="#" class="btn btn-lg btn-primary">免費索取!</a>
+                        <div class="learn-more">或 <a href="index.html">了解詳情.</a></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+</tal:checkRole>

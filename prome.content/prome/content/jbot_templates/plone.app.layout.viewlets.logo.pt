@@ -1,0 +1,21 @@
+<tal:checkRole condition="python:request['AUTHENTICATED_USER'].has_role('Manager')">
+  <a id="portal-logo"
+     title="Home"
+     accesskey="1"
+     tal:attributes="href view/navigation_root_url;
+                     title view/navigation_root_title"
+     i18n:domain="plone"
+     i18n:attributes="title">
+      <img src="logo.jpg" alt=""
+           tal:replace="structure view/logo_tag" /></a>
+</tal:checkRole>
+
+<tal:checkRole condition="python:not request['AUTHENTICATED_USER'].has_role('Manager')">
+          <h1 class="logo">
+            <a href="/">
+              <img alt="Porto" width="225" height="65"
+                   data-sticky-width="135" data-sticky-height="39"
+                   src="http://localhost:8301/pm-seminar/logo.png">
+            </a>
+          </h1>
+</tal:checkRole>

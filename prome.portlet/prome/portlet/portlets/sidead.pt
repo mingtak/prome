@@ -1,0 +1,29 @@
+<dl class="portlet portlet${portlet_type_name}"
+    tal:define="portal_state context/@@plone_portal_state;
+                context_state context/@@plone_context_state;
+                catalog python:context.portal_catalog;
+                brain python:catalog({'portal_type':'prome.content.sidead'})">
+
+<tal:repeatBrain repeat="item brain">
+
+    <div class="portletItem odd"
+         tal:define="image python:item.getObject()"
+         tal:condition="python:image.adImage.contentType != 'image/gif'">
+      <a tal:attributes="href python:item.getObject().adLink">
+        <img tal:replace="structure image/@@images/adImage/mini" />
+      </a>
+    </div>
+    <div class="portletItem odd"
+         tal:define="image python:item.getObject()" 
+         tal:condition="python:image.adImage.contentType == 'image/gif'">
+      <a tal:attributes="href python:item.getObject().adLink">
+        <img width="250" 
+             tal:attributes="src python:'%s/@@download/adImage/%s' %
+                                        (item.getObject().absolute_url(), item.getObject().adImage.filename)" />
+      </a>
+    </div>
+
+<br/>
+</tal:repeatBrain>
+
+</dl>
