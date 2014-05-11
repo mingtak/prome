@@ -27,6 +27,7 @@ class ISlide(form.Schema, IImageScaleTraversable):
 #    form.widget(slides=AutocompleteFieldWidget)
     slides = RelationList(
         title=_(u"Slide show images"),
+        description=_(u'Select slide image, the image size must be width:height as 1140:430'),
         value_type=RelationChoice(
             source=ObjPathSourceBinder(
                 object_provides=IImage.__identifier__,
@@ -38,7 +39,7 @@ class ISlide(form.Schema, IImageScaleTraversable):
 
     belowSlideTextLine1 = schema.TextLine(
         title=_(u'Below slide text line 1'),
-        description=_(u'Can use <em> tag, to highlight inside text'),
+        description=_(u'Can use "em" tag, to highlight inside text'),
         required=True,
     )
 
