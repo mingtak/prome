@@ -1,0 +1,21 @@
+<tal:checkRole condition="python:not request['AUTHENTICATED_USER'].has_role('Manager')">
+  <div id="promeRowLeft">
+    <tal:getBrain define="catalog python:context.portal_catalog;
+                          brain python:catalog({'portal_type':'Folder', 'path':'/pm-seminar/hold_job'}, sort_on='path')[1:]">
+<h2>國考情報</h2>
+
+                    <div class="feature-box" tal:repeat="item brain">
+                      <div class="feature-box-icon pencil-color">
+                        <i class="icon icon-2x icon-pencil"></i>
+                      </div>
+                      <div class="feature-box-info">
+                        <a tal:attributes="href item/getURL">
+                          <h4 class="shorter" tal:content="item/Title">prome here</h4>
+                        </a>
+                        <p class="tall" tal:content="item/Description">Lorem ipsum dolor sit amet, consectetur adip.</p>
+                      </div>
+                    </div>
+
+    </tal:getBrain>
+  </div>
+</tal:checkRole>

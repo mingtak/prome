@@ -1,0 +1,74 @@
+<tal:checkRole condition="python:not request['AUTHENTICATED_USER'].has_role('Manager')">
+<tal:getSlide define="catalog python:context.portal_catalog;
+                      classIntro python:catalog(portal_type='prome.content.classintro')[0];
+                      item python:classIntro.getObject()">
+
+        <div id="promeClassIntro">
+          <div class="container">
+            <div class="row center">
+              <div class="col-md-12">
+                <h2 class="short word-rotator-title" tal:content="structure item/classIntroTitle">
+                </h2>
+                <p class="featured lead" tal:content="item/classIntroDescription">
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="home-concept">
+            <div class="container">
+              <div class="row center">
+                <span class="sun"></span>
+                <span class="cloud"></span>
+                <div class="col-md-2 col-md-offset-1">
+                  <div class="process-image" data-appear-animation="bounceIn">
+                    <img tal:replace="structure item/@@images/class_1_Image" />
+                    <strong tal:content="item/class_1_Text"></strong>
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <div class="process-image" data-appear-animation="bounceIn" data-appear-animation-delay="200">
+                    <img tal:replace="structure item/@@images/class_2_Image" />
+                    <strong tal:content="item/class_2_Text"></strong>
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <div class="process-image" data-appear-animation="bounceIn" data-appear-animation-delay="400">
+                    <img tal:replace="structure item/@@images/class_3_Image" />
+                    <strong tal:content="item/class_3_Text"></strong>
+                  </div>
+                </div>
+                <div class="col-md-4 col-md-offset-1">
+                  <div class="project-image">
+                    <div id="fcSlideshow" class="fc-slideshow">
+                      <ul class="fc-slides">
+
+
+<tal:newClass repeat="newClass item/newClass">
+                        <li tal:define="newClassItem python:newClass.to_object;
+                                        index repeat/newClass/index">
+                          <a tal:attributes="href python:item.newClassUrl.split()[index]">
+
+<img tal:define="scales newClassItem/@@images"
+     tal:replace="structure python: scales.tag('image', Class='img-responsive')" />
+
+
+<!--
+                            <img class="img-responsive" src="img/projects/project-home-1.jpg" />
+-->
+                          </a>
+                        </li>
+</tal:newClass>
+
+
+                      </ul>
+                    </div>
+                    <strong class="our-work">新開班級</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+</tal:getSlide>
+</tal:checkRole>
