@@ -15,7 +15,7 @@ from plone.namedfile.interfaces import IImageScaleTraversable
 
 from z3c.relationfield.schema import RelationList, RelationChoice
 from plone.formwidget.contenttree import ObjPathSourceBinder
-
+from plone.indexer import indexer
 
 from prome.content import MessageFactory as _
 
@@ -25,6 +25,11 @@ class ISideAd(form.Schema, IImageScaleTraversable):
     AD at sidebar
     """
 
+    showAtHomePage = schema.Bool(
+        title=_(u'Show at home page'),
+        description=_(u'if not checked, this ad will not show at home page, but will show at other pages'),
+        required=False,
+    )
 
     adImage = NamedBlobImage(
         title=_(u'side AD image'),
@@ -49,3 +54,9 @@ class SampleView(grok.View):
     grok.context(ISideAd)
     grok.require('zope2.View')
     grok.name('view')
+
+
+@indexer(ISideAd)
+def showAtHomePage_indexer(obj):
+     return obj.showAtHomePage
+grok.global_adapter(showAtHomePage_indexer, name='showAtHomePage')

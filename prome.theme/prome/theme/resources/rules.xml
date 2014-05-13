@@ -5,7 +5,7 @@
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
   <!-- 全域設定 -->
-<!--  <notheme css:if-content="body.userrole-manager" /> -->
+  <notheme css:if-content="body.userrole-manager" />
   <notheme css:if-content="#form" />
   <rules css:if-not-content="body.userrole-manager">
     <drop css:content="#edit-bar" css:if-content="body.template-edit" />
@@ -24,63 +24,54 @@
            css:content="div#promeMainMenu" />
 
   <!-- language selector -->
-  <replace css:theme-children="div.callus.clearfix ul"
-           css:content-children="ul#portal-languageselector" />
+
 
   <!-- plone-dmsearch input box -->
   <replace css:theme-children="#dmsearch" css:content-children="#plone-dmsearch" />
 
   <!-- footer -->
-  <replace css:theme="div#plone-footer p"
-           css:content="div#portal-footer" />
+
 
   <!-- plone-home-slide -->
   <replace css:theme="#promeSlide"
            css:content="#promeSlide" />
 
+  <!-- plone-class-introduction -->
+  <replace css:theme="#promeClassIntro"
+           css:content-children="#promeClassIntro" />
+
+  <!-- promeRowLeft -->
+  <replace css:theme-children="#promeRowLeft"
+           css:content-children="#promeRowLeft" />
+
+  <!-- promeRowMiddle -->
+  <replace css:theme-children="#promeRowMiddle"
+           css:content-children="#promeRowMiddle" />
+
+  <!-- promeSideAdAtHomePage -->
+  <replace css:theme-children="#promeSideAdAtHomePage"
+           css:content="#portal-column-one" />
+
   <!-- plone-breadcrumbs -->
-  <replace css:theme="#plone-breadcrumbs"
-           css:content="#plone-breadcrumbs" />
-  <drop css:theme="#plone-breadcrumbs" css:if-content="#plone-home-slide" />
+
 
   <!-- plone-content -->
-  <before css:theme-children="#plone-content .container .row .half-width.clearfix"
-          css:content-children="#plone-content .container .row .half-width.clearfix" />
+
 
   <!-- plone-secript -->
-  <replace css:theme="#plone-script" css:content-children="#plone-script" />
+
 
   <!-- portal-column-two / sidebar-->
-  <replace css:theme-children="#sidebar" css:content-children="#portal-column-two" />
+
 
   <!-- portal-column-two / edit-bar -->
-  <before css:theme-children="#sidebar" css:content="#edit-bar" />
 
-
-  <!-- plone-section1, home page, tourevent -->
-  <replace css:theme="#plone-section1" css:content="#plone-section1" />
-
-  <!-- plone-section1, login_form -->
-  <after css:theme="#plone-section1" css:content="#login_form" />
-
-  <!-- plone-section2, home page, tournews -->
-  <replace css:theme="#plone-section2" css:content="#plone-section2" />
-
-  <!-- plone-section3, home page, attractions -->
-  <replace css:theme="#plone-section3" css:content="#plone-section3" />
-
-
-  <!-- drop .animationload & #portal-column-two -->
-  <drop css:theme=".animationload" css:if-not-content="#plone-home-slide" />
-  <drop css:theme="#plone-content" css:if-content="#plone-home-slide" />
 
   <!-- plone-content, 404 not found -->
-  <replace css:theme-children="#plone-content .container .row .half-width.clearfix"
-           css:content="#content" css:if-content="body.template-default_error_message" />
+
 
   <!-- plone-content, template-seo-context-properties -->
-  <replace css:theme-children="#plone-content .container .row .half-width.clearfix"
-           css:content="#content" css:if-content="body.template-seo-context-properties" />
+
 
   <rules> <!-- if-path="/en-us"> -->
     <theme href="index.html" css:if-content="#visual-portal-wrapper" />

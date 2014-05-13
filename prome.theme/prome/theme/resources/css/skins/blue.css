@@ -265,3 +265,14 @@ div.shop .star-rating span,
 div.shop .cart-totals tr.total .amount {
   color: #0088cc;
 }
+
+
+/* 自建 */
+div.feature-box div.feature-box-icon.pencil-color {
+  background-color: #080;
+}
+
+div.feature-box div.feature-box-icon.wrench-color {
+  background-color: #E81;
+}
+

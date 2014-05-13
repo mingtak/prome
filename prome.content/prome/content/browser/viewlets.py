@@ -1,7 +1,7 @@
 #-*- coding:utf-8 -*-
 from zope.interface import Interface
 from five import grok
-from plone.app.layout.viewlets.interfaces import IPortalHeader
+from plone.app.layout.viewlets.interfaces import IPortalHeader, IAboveContentTitle
 #IAboveContentTitle, IBelowContentBody
 
 
@@ -16,6 +16,18 @@ class PromeMainMenu(grok.Viewlet):
 
 class PromeSlide(grok.Viewlet):
     grok.viewletmanager(IPortalHeader)
+
+
+class PromeClassIntro(grok.Viewlet):
+    grok.viewletmanager(IPortalHeader)
+
+
+class PromeRowLeft(grok.Viewlet):
+    grok.viewletmanager(IAboveContentTitle)
+
+
+class PromeRowMiddle(grok.Viewlet):
+    grok.viewletmanager(IAboveContentTitle)
 
 
 #下列可再新增viewlet, 可用的interface可查詢 plone.app.layout.viewlets.interfaces

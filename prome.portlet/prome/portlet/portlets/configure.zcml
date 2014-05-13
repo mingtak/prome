@@ -9,14 +9,25 @@
   <!-- -*- extra stuff goes here -*- -->
 
   <plone:portlet
-      name="prome.portlet.portlets.SideAd"
-      interface=".sidead.ISideAd"
-      assignment=".sidead.Assignment"
+      name="prome.portlet.portlets.SideAdAtHomePage"
+      interface=".sideadathomepage.ISideAdAtHomePage"
+      assignment=".sideadathomepage.Assignment"
       view_permission="zope2.View"
       edit_permission="cmf.ManagePortal"
-      renderer=".sidead.Renderer"
-      addview=".sidead.AddForm"
-      editview=".sidead.EditForm"
+      renderer=".sideadathomepage.Renderer"
+      addview=".sideadathomepage.AddForm"
+      editview=".sideadathomepage.EditForm"
+      />
+
+  <plone:portlet
+      name="prome.portlet.portlets.SideAdAtOtherPages"
+      interface=".sideadatotherpages.ISideAdAtOtherPages"
+      assignment=".sideadatotherpages.Assignment"
+      view_permission="zope2.View"
+      edit_permission="cmf.ManagePortal"
+      renderer=".sideadatotherpages.Renderer"
+      addview=".sideadatotherpages.AddForm"
+      editview=".sideadatotherpages.EditForm"
       />
 
 </configure>

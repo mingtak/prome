@@ -52,6 +52,14 @@ def test_suite():
 
         # -*- extra stuff goes here -*-
 
+        # Integration tests for ClassIntro
+        ztc.ZopeDocFileSuite(
+            'ClassIntro.txt',
+            package='prome.content',
+            optionflags = OPTION_FLAGS,
+            test_class=TestCase),
+
+
         # Integration tests for Slide
         ztc.ZopeDocFileSuite(
             'Slide.txt',
