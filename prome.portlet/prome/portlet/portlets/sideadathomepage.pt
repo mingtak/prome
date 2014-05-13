@@ -2,7 +2,7 @@
     tal:define="portal_state context/@@plone_portal_state;
                 context_state context/@@plone_context_state;
                 catalog python:context.portal_catalog;
-                brain python:catalog({'portal_type':'prome.content.sidead', 'showAtHomePage':True})">
+                brain python:catalog({'portal_type':'prome.content.sidead', 'showAtHomePage':1})">
 
 <tal:repeatBrain repeat="item brain">
 

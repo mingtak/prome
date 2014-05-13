@@ -30,11 +30,13 @@
   <replace css:theme-children="#dmsearch" css:content-children="#plone-dmsearch" />
 
   <!-- footer -->
+  <replace css:theme="footer" css:content="footer" />
 
-
-  <!-- plone-home-slide -->
+  <!-- plone-home-slide, height要去掉，否則slide會錯誤-->
   <replace css:theme="#promeSlide"
            css:content="#promeSlide" />
+  <drop attributes="height" css:content="div#nivoSlider img" />
+  <drop attributes="title" css:content="div#nivoSlider img" />
 
   <!-- plone-class-introduction -->
   <replace css:theme="#promeClassIntro"
@@ -71,6 +73,10 @@
 
 
   <!-- plone-content, template-seo-context-properties -->
+
+
+
+  <!-- Drop -->
 
 
   <rules> <!-- if-path="/en-us"> -->

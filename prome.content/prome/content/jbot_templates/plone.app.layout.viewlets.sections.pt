@@ -1,0 +1,40 @@
+<div id="promeMainMenu">
+<tal:sections tal:define="portal_tabs view/portal_tabs"
+     tal:condition="portal_tabs"
+     i18n:domain="plone">
+<!--    <p class="hiddenStructure" i18n:translate="heading_sections">Navigation</p>
+-->
+        <div class="navbar-collapse nav-main-collapse collapse">
+          <div class="container">
+            <div class="social-icons">
+              <ul class="social-icons">
+                <li class="facebook"><a href="http://www.facebook.com/" target="_blank" title="Facebook">Facebook</a></li>
+                <li class="googleplus"><a href="http://www.twitter.com/" target="_blank" title="Google+">Google+</a></li>
+                <li class="mail"><a href="mailto:" target="_blank" title="Send Mail">Send Mail</a></li>
+              </ul>
+            </div>
+
+
+<nav class="nav-main mega-menu">
+
+    <ul id="portal-globalnav" class="nav nav-pills nav-main"
+        tal:define="selected_tab python:view.selected_portal_tab">
+      <tal:tabs tal:repeat="tab portal_tabs">
+        <li tal:define="tid tab/id"
+            tal:attributes="id string:portaltab-${tid};
+                            class python:selected_tab==tid and 'active selected' or 'plain'">
+          <a class="dropdown-toggle"
+             href="" tal:content="tab/name"
+                     tal:attributes="href tab/url;
+                                     title tab/description|nothing;">
+            Tab Name
+          </a>
+        </li>
+      </tal:tabs>
+    </ul>
+
+</nav>
+</div></div>
+
+</tal:sections>
+</div>

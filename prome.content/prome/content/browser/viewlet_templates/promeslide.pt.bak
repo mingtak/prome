@@ -7,12 +7,10 @@
                 <div class="nivo-slider">
                   <div class="slider-wrapper theme-default">
                     <div id="nivoSlider" class="nivoSlider">
-
 <tal:slideImages repeat="imageObject python:slideItem.getObject().slides">
 <img tal:define="scales imageObject/to_object/@@images"
-     tal:replace="structure python:scales.tag('image', scales='slide', direction='down')" />
+     tal:replace="structure python: scales.tag('image', scales='slide', direction='down')" />
 </tal:slideImages>
-
                     </div>
                     <div id="htmlcaption" class="nivo-html-caption"></div>
                   </div>

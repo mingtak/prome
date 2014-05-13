@@ -1,19 +1,72 @@
-<footer>
-<div>
-<img src="http://localhost:8301/pm-seminar/7cfb7d718cc76e90/7cfb7d7157166a94/footer_logo.gif/@@images/28d0633d-9bb0-4083-aaa5-bb7839ff3566.jpeg" />
+      <footer id="footer">
+        <div class="container">
+          <div class="row">
+            <div class="footer-ribon">
+              <span>Get in Touch</span>
+            </div>
 
-網址 http://web.pm-seminar.tw/
+            <div class="col-md-3">
+              <div class="newsletter">
+                <h4>台中總校</h4>
+                <ul class="contact">
+                  <li><p><i class="icon icon-home"></i> <strong>地址:</strong>台中市綠川東街 34 號 1 樓</p></li>
+                  <li><p><i class="icon icon-phone"></i> <strong>電話:</strong> (04) 2221-2773</p></li>
+                  <li><p><i class="icon icon-copy"></i> <strong>傳真:</strong> (04) 2221-1231</p></li>
+                  <li><p><i class="icon icon-code"></i> <strong>網址:</strong> <a href="/">http://www.pm-seminar.tw</a></p></li>
+                </ul>
+              </div>
+            </div>
 
-台中總校：台中市綠川東街 34 號 1 樓 /TEL：04-22212773 /FAX：04-22211231
+            <div class="col-md-3">
+              <div class="newsletter">
+                <h4>花蓮分班</h4>
+                <ul class="contact">
+                  <li><p><i class="icon icon-home"></i> <strong>地址:</strong>花蓮市富陽路 93 號</p></li>
+                  <li><p><i class="icon icon-phone"></i> <strong>電話:</strong> (03) 846-6336</p></li>                         
+                  <li><p><i class="icon icon-copy"></i> <strong>傳真:</strong> (03) 846-6332</p></li>
+                </ul>
+              </div>
+            </div>
 
-花蓮分班：花蓮市富陽路 93 號 /TEL：03-8466336 /FAX：03-8466332
+            <div class="col-md-3">
+              <div class="newsletter">
+                <h4>嘉義分班</h4>
+                <ul class="contact">
+                  <li><p><i class="icon icon-home"></i> <strong>地址:</strong>嘉義市垂楊路 400 號 8 樓之 1</p></li>
+                  <li><p><i class="icon icon-phone"></i> <strong>電話:</strong> (05) 216-7733</p></li>                         
+                  <li><p><i class="icon icon-copy"></i> <strong>傳真:</strong> (05) 222-0669</p></li>
+                </ul>
+              </div>
+            </div>
 
-嘉義分班：嘉義市垂楊路 400 號 8 樓之 1 /TEL：2167733 /FAX：05-2220669
+            <div class="col-md-3">
+              <h4>Follow Us</h4>
+              <div class="social-icons">
+                <ul class="social-icons">
+                  <li class="facebook"><a href="http://www.facebook.com/" target="_blank" data-placement="bottom" rel="tooltip" title="Facebook">Facebook</a></li>
+                  <li class="twitter"><a href="http://www.twitter.com/" target="_blank" data-placement="bottom" rel="tooltip" title="Twitter">Twitter</a></li>
+                  <li class="linkedin"><a href="http://www.linkedin.com/" target="_blank" data-placement="bottom" rel="tooltip" title="Linkedin">Linkedin</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
 
-郵政劃撥 帳號：22567393 戶名：博明文化出版社
-
-銀行轉帳 合作金庫 代碼：006 帳號：0220717242564
-
-Copyright(C) 2008 pm-seminar All Right Reserved.
-</div>
-</footer>
+        </div>
+        <div class="footer-copyright">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-2">
+                <a href="/" class="logo">
+                  <img alt="Porto Website Template" class="img-responsive" src="/pm-seminar/logo.png">
+                </a>
+              </div>
+              <div class="col-md-6">
+                <br />
+                <h5>© Copyright 2008-<tal:year content="view/year"></tal:year>. All Rights Reserved.</h5>
+              </div>
+              <div class="col-md-4">
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>

@@ -15,7 +15,7 @@
             <a href="/">
               <img alt="Porto" width="225" height="65"
                    data-sticky-width="135" data-sticky-height="39"
-                   src="http://localhost:8301/pm-seminar/logo.png">
+                   src="/logo.png">
             </a>
           </h1>
 </tal:checkRole>
