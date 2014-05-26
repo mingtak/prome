@@ -1,0 +1,74 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="prome.content">
+<body>
+
+<tal:comment tal:condition="nothing">
+    This is a sample view template. It will not be used for rendering the
+    content unless activated by creation of a view class with a matching name.
+</tal:comment>
+
+<metal:main fill-slot="content-core">
+  <metal:content-core define-macro="content-core">
+
+<tal:getBrain define="start python:int(getattr(request, 'start', 0));
+                      catalog python:context.portal_catalog;
+                      folder_path python:'/'.join(context.getPhysicalPath()).split('/index_html')[0];
+                      totalBrain python:catalog({'portal_type':'prome.content.normalpage',
+                                                 'path':{'query': folder_path, 'depth': 1},
+                                                }, sort_on='created', sort_order='reverse',);
+                      brain python:totalBrain[start:start+10]">
+
+
+<div class="col-md-10 col-md-offset-1">
+<table class="table table-striped">
+  <tal:getItem repeat="item brain">
+    <tal:getObject define="object python:item.getObject()">
+
+  <tr>
+    <td>
+      <a tal:attributes="href item/getURL">
+        <h4><i class="icon-book" />
+            <span tal:content="item/Title" />
+        </h4>
+      </a>
+      <p tal:content="item/Description"/>
+    </td>
+  </tr>
+
+</tal:getObject>
+</tal:getItem>
+
+</table>
+
+<div class="pull-right">
+  <tal:check condition="python:start!=0">
+    <a tal:define="nextStart python:start-10"
+       tal:attributes="href string:/key_point?start=${nextStart}">
+      <button type="button" class="btn btn-primary btn-sm">上一頁</button>
+    </a>
+  </tal:check>
+  <tal:check condition="python:start+10 < len(totalBrain)">
+    <a tal:define="nextStart python:start+10"
+       tal:attributes="href string:/key_point?start=${nextStart}">
+      <button type="button" class="btn btn-primary btn-sm">下一頁</button>
+    </a>
+  </tal:check>
+</div>
+
+</div>
+
+</tal:getBrain>
+
+
+
+  </metal:content-core>
+</metal:main>
+
+</body>
+</html>
+

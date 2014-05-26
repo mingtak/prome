@@ -6,6 +6,7 @@
 
   <!-- 全域設定 -->
   <notheme css:if-content="body.userrole-manager" />
+  <notheme css:if-content="body.userrole-editor" />
   <notheme css:if-content="#form" />
   <rules css:if-not-content="body.userrole-manager">
     <drop css:content="#edit-bar" css:if-content="body.template-edit" />
@@ -37,28 +38,53 @@
            css:content="#promeSlide" />
   <drop attributes="height" css:content="div#nivoSlider img" />
   <drop attributes="title" css:content="div#nivoSlider img" />
+  <drop css:theme="#promeSlide" if-not-path="/" />
 
   <!-- plone-class-introduction -->
   <replace css:theme="#promeClassIntro"
            css:content-children="#promeClassIntro" />
+  <drop css:theme="#promeClassIntro" if-not-path="/" />
 
   <!-- promeRowLeft -->
   <replace css:theme-children="#promeRowLeft"
            css:content-children="#promeRowLeft" />
+  <drop css:theme="#promeRowLeft" if-not-path="/" />
 
   <!-- promeRowMiddle -->
   <replace css:theme-children="#promeRowMiddle"
            css:content-children="#promeRowMiddle" />
+  <drop css:theme="#promeRowMiddle" if-not-path="/" />
 
   <!-- promeSideAdAtHomePage -->
   <replace css:theme-children="#promeSideAdAtHomePage"
-           css:content="#portal-column-one" />
+           css:content="#portal-column-one" if-path="/" />
+  <replace css:theme-children="#promeSideAdAtHomePage"
+           css:content="#portal-column-two" if-not-path="/" />
+
+  <!-- key-point only -->
+<!--  <drop css:theme="div#content-core" if-path="key_point" />
+  <replace css:theme-children="div#promeRow-for-keypoint"
+           css:content="#portal-column-one"
+           if-path="/key_point" />
+  <replace css:theme-children="div#content-core-for-keypoint"
+           css:content-children="div#content-core"
+           if-path="key_point" />
+-->
+<!--
+<div id="promeRow-for-keypoint" class="col-md-3" />
+<div id="content-core-for-keypoint" class="col-md-6" />
+-->
 
   <!-- plone-breadcrumbs -->
+  <replace css:theme="section#prome-pathbar"
+           css:content="section#prome-pathbar"
+           if-not-path="/" />
 
 
   <!-- plone-content -->
-
+  <replace css:theme-children="div#content-core"
+           css:content-children="div#content-core"
+           if-not-path="/" />
 
   <!-- plone-secript -->
 
@@ -77,6 +103,7 @@
 
 
   <!-- Drop -->
+  <drop css:theme="div#homepage-hr" if-not-path="/" />
 
 
   <rules> <!-- if-path="/en-us"> -->

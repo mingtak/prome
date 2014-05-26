@@ -1,4 +1,5 @@
-<tal:checkRole condition="python:request['AUTHENTICATED_USER'].has_role('Manager')">
+<tal:checkRole condition="python:request['AUTHENTICATED_USER'].has_role('Manager') or request['AUTHENTICATED_USER'].has_role('Editor')">
+
   <a id="portal-logo"
      title="Home"
      accesskey="1"
@@ -10,7 +11,7 @@
            tal:replace="structure view/logo_tag" /></a>
 </tal:checkRole>
 
-<tal:checkRole condition="python:not request['AUTHENTICATED_USER'].has_role('Manager')">
+<tal:checkRole condition="python:not (request['AUTHENTICATED_USER'].has_role('Manager') or request['AUTHENTICATED_USER'].has_role('Editor'))">
           <h1 class="logo">
             <a href="/">
               <img alt="Porto" width="225" height="65"

@@ -1,0 +1,89 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="prome.content">
+<body>
+
+<tal:comment tal:condition="nothing">
+    This is a sample view template. It will not be used for rendering the
+    content unless activated by creation of a view class with a matching name.
+</tal:comment>
+
+<metal:main fill-slot="content-core">
+  <metal:content-core define-macro="content-core">
+
+<tal:getBrain define="catalog python:context.portal_catalog;
+                      folder_path python:'/'.join(context.getPhysicalPath()).split('/index_html')[0];
+                      brain python:catalog({'portal_type':'Folder',
+                                            'path':{'query': folder_path, 'depth': 1},
+                                           })">
+
+
+<tal:checkRole condition="python:not (request['AUTHENTICATED_USER'].has_role('Manager') or request['AUTHENTICATED_USER'].has_role('Editor'))">
+<div class="col-md-12">
+          <div class="row">
+            <ul class="portfolio-list sort-destination" data-sort-id="portfolio">
+  <tal:getItem repeat="item brain">
+    <tal:getObject define="object python:item.getObject()">
+
+              <li class="col-md-6 isotope-item websites">
+                <div class="portfolio-item img-thumbnail">
+                  <a class="thumb-info" tal:attributes="href item/getURL">
+                        <tal:getSrc define='imgString object/@@images/image/preview;
+                                            srcString python:imgString.split("src=\"")[1].split("\"")[0]'>
+                          <img class="img-responsive" tal:attributes="src srcString">
+                        </tal:getSrc>
+                    <span class="thumb-info-title">
+                      <span class="thumb-info-inner" tal:content="item/Title"></span>
+                      <span class="thumb-info-type" tal:content="item/Description"></span>
+                    </span>
+                    <span class="thumb-info-action">
+                      <span title="Universal" href="#" class="thumb-info-action-icon"><i class="icon icon-link"></i></span>
+                    </span>
+                  </a>
+                </div>
+              </li>
+    </tal:getObject>
+  </tal:getItem>
+
+            </ul>
+          </div>
+
+</div>
+</tal:checkRole>
+
+
+<tal:checkRole condition="python:request['AUTHENTICATED_USER'].has_role('Manager') or request['AUTHENTICATED_USER'].has_role('Editor')">
+  <tal:getItem repeat="item brain">
+    <tal:getObject define="object python:item.getObject()">
+
+<h3 tal:content="item/Title"></h3>
+<p>
+  <a tal:attributes="href item/getURL">
+    <img tal:replace="structure object/@@images/image/thumb" />
+  </a>
+</p><br/>
+    </tal:getObject>
+  </tal:getItem>
+</tal:checkRole>
+
+
+
+
+
+
+
+</tal:getBrain>
+
+
+
+
+  </metal:content-core>
+</metal:main>
+
+</body>
+</html>
+

@@ -1,0 +1,131 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="plone">
+<body>
+
+<metal:content-core fill-slot="content-core">
+    <metal:content-core define-macro="content-core">
+
+
+
+
+
+        <div class="container">
+         <hr class="tall">
+         <div class="row">
+           <div class="col-md-9">
+             <div class="row">
+               <div class="col-md-6">
+                 <div class="owl-carousel" data-plugin-options='{"items": 1, "autoHeight": true}'>
+                   <div>
+                     <div class="thumbnail">
+          <tal:getSrc define='imgString context/@@images/leadImage/preview;
+                      srcString python:imgString.split("src=\"")[1].split("\"")[0]'>
+                       <img alt="" class="img-responsive img-rounded" tal:attributes="src srcString">
+          </tal:getSrc>
+                     </div>
+                   </div>
+
+<tal:check condition="context/image1">
+                   <div>
+                     <div class="thumbnail">
+          <tal:getSrc define='imgString context/@@images/image1/preview;
+                      srcString python:imgString.split("src=\"")[1].split("\"")[0]'>
+                       <img alt="" class="img-responsive img-rounded" tal:attributes="src srcString">
+          </tal:getSrc> 
+                     </div>
+                   </div>
+</tal:check>
+<tal:check condition="context/image2">
+                   <div>
+                     <div class="thumbnail">
+          <tal:getSrc define='imgString context/@@images/image2/preview;
+                      srcString python:imgString.split("src=\"")[1].split("\"")[0]'>
+                       <img alt="" class="img-responsive img-rounded" tal:attributes="src srcString">
+          </tal:getSrc> 
+                     </div>
+                   </div>
+</tal:check>
+
+                 </div>
+               </div>
+               <div class="col-md-6">
+                 <div class="summary entry-summary">
+                   <h2 class="shorter"><strong tal:content="context/Title">Blue Ladies Handbag</strong></h2>
+                   <div class="review_num">
+                     <span class="count" itemprop="ratingCount" tal:content="context/Description"></span>
+                   </div>
+<hr>
+                   <div class="taller" tal:content="structure context/text/raw"> rich text </div>
+                 </div>
+               </div>
+             </div>
+
+<p /><br />
+
+<tal:checkTabs condition="context/tabTitles">
+  <tal:getTabTitles define="tabTitles context/tabTitles;
+                            tabTitle python:tabTitles.split('\n')">
+
+
+             <div class="row">
+               <div class="col-md-12">
+                 <div class="tabs tabs-product">
+                   <ul class="nav nav-tabs">
+<tal:repeat repeat="title tabTitle">
+                     <li tal:define="count repeat/title/index"
+                         tal:attributes="class python:'active' if count == 0 else ''">
+                       <a data-toggle="tab"
+                          tal:attributes="href string:#tab_id_${repeat/title/number}"
+                          tal:content="title"></a>
+                     </li>
+</tal:repeat>
+                   </ul>
+                   <div class="tab-content">
+<tal:check condition="python:len(tabTitle) > 0">
+                     <div class="tab-pane active" id="tab_id_1" tal:content="structure context/tab_1_body/raw">
+                     </div>
+</tal:check>
+
+<tal:check condition="python:len(tabTitle) > 1">
+                     <div class="tab-pane" id="tab_id_2" tal:content="structure context/tab_2_body/raw">
+                     </div>
+</tal:check>
+<tal:check condition="python:len(tabTitle) > 2">
+                     <div class="tab-pane" id="tab_id_3" tal:content="structure context/tab_3_body/raw">
+                     </div>
+</tal:check>
+<tal:check condition="python:len(tabTitle) > 3">
+                     <div class="tab-pane" id="tab_id_4" tal:content="structure context/tab_4_body/raw">
+                     </div>
+</tal:check>
+<tal:check condition="python:len(tabTitle) > 4">
+                     <div class="tab-pane" id="tab_id_5" tal:content="structure context/tab_5_body/raw">
+                     </div>
+</tal:check>
+
+
+
+
+                   </div>
+                 </div>
+               </div>
+             </div>
+  </tal:getTabTitles>
+</tal:checkTabs>
+           </div>
+         </div>
+       </div>
+
+
+
+    </metal:content-core>
+</metal:content-core>
+
+</body>
+</html>
+

@@ -1,4 +1,4 @@
-<tal:checkRole condition="python:not request['AUTHENTICATED_USER'].has_role('Manager')">
+<tal:checkRole condition="python:not (request['AUTHENTICATED_USER'].has_role('Manager') or request['AUTHENTICATED_USER'].has_role('Editor'))">
   <div id="promeRowLeft">
     <tal:getBrain define="catalog python:context.portal_catalog;
                           brain python:catalog({'portal_type':'Folder', 'path':'/pm-seminar/hold_job'}, sort_on='path')[1:]">

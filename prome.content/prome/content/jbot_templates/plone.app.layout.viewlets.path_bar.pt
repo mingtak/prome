@@ -1,0 +1,109 @@
+<tal:checkRole condition="python:not (request['AUTHENTICATED_USER'].has_role('Manager') or request['AUTHENTICATED_USER'].has_role('Editor'))">
+
+<section class="page-top" id="prome-pathbar">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+
+<tal:pathbar i18n:domain="plone"
+             define="breadcrumbs view/breadcrumbs;
+                     is_rtl view/is_rtl">
+
+
+<ul class="breadcrumb">
+
+    <li id="breadcrumbs-home">
+        <a i18n:translate="tabs_home"
+           tal:attributes="href view/navigation_root_url">Home</a>
+    </li>
+
+    <tal:li repeat="crumb breadcrumbs"
+            attributes="dir python:is_rtl and 'rtl' or 'ltr';
+                        id string:breadcrumbs-${repeat/crumb/number}">
+      <li tal:define="is_last repeat/crumb/end;
+                      url crumb/absolute_url;
+                      title crumb/Title"
+          ta:condition="python:not is_last">
+
+
+        <tal:item tal:define="is_last repeat/crumb/end;
+                              url crumb/absolute_url;
+                              title crumb/Title">
+            <a href="#"
+               tal:omit-tag="not: url"
+               ta:condition="python:not is_last"
+               tal:attributes="href url"
+               tal:content="title">
+                crumb
+            </a>
+         </tal:item>
+      </li>
+    </tal:li>
+
+
+</ul>
+
+</tal:pathbar>
+
+
+
+      </div>
+
+
+
+    </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <h2 tal:content="here/Title"> Contact Us</h2>
+        </div>
+      </div>
+
+  </div>
+</section>
+</tal:checkRole>
+
+
+
+<tal:checkRole condition="python:request['AUTHENTICATED_USER'].has_role('Manager') or request['AUTHENTICATED_USER'].has_role('Editor')">
+
+<div id="portal-breadcrumbs"
+     i18n:domain="plone"
+     tal:define="breadcrumbs view/breadcrumbs;
+                 is_rtl view/is_rtl">
+
+    <span id="breadcrumbs-you-are-here" i18n:translate="you_are_here">You
+are here:</span>
+    <span id="breadcrumbs-home">
+        <a i18n:translate="tabs_home"
+           tal:attributes="href view/navigation_root_url">Home</a>
+        <span tal:condition="breadcrumbs" class="breadcrumbSeparator">
+            <tal:ltr condition="not: is_rtl">/</tal:ltr>
+            <tal:rtl condition="is_rtl">\</tal:rtl>
+        </span>
+    </span>
+    <span tal:repeat="crumb breadcrumbs"
+          tal:attributes="dir python:is_rtl and 'rtl' or 'ltr';
+                          id string:breadcrumbs-${repeat/crumb/number}">
+        <tal:item tal:define="is_last repeat/crumb/end;
+                              url crumb/absolute_url;
+                              title crumb/Title">
+            <a href="#"
+               tal:omit-tag="not: url"
+               tal:condition="python:not is_last"
+               tal:attributes="href url"
+               tal:content="title">
+                crumb
+            </a>
+            <span class="breadcrumbSeparator" tal:condition="not: is_last">
+                <tal:ltr condition="not: is_rtl">/</tal:ltr>
+                <tal:rtl condition="is_rtl">\</tal:rtl>
+            </span>
+            <span id="breadcrumbs-current"
+                  tal:condition="is_last"
+                  tal:content="title">crumb</span>
+         </tal:item>
+    </span>
+
+</div>
+</tal:checkRole>

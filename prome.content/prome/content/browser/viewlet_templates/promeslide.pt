@@ -1,4 +1,4 @@
-<tal:checkRole condition="python:not request['AUTHENTICATED_USER'].has_role('Manager')">
+<tal:checkRole condition="python:not (request['AUTHENTICATED_USER'].has_role('Manager') or request['AUTHENTICATED_USER'].has_role('Editor'))">
 <tal:getSlide define="catalog python:context.portal_catalog;
                            slideItem python:catalog(portal_type='prome.content.slide')[0]">
           <div id="promeSlide" class="container">

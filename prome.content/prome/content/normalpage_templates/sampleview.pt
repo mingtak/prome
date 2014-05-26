@@ -1,0 +1,63 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="prome.content">
+<body>
+
+<tal:comment tal:condition="nothing">
+    This is a sample view template. It will not be used for rendering the
+    content unless activated by creation of a view class with a matching name.
+</tal:comment>
+
+<metal:main fill-slot="content-core">
+  <metal:content-core define-macro="content-core">
+
+
+
+
+
+          <div class="row">
+
+            <div class="col-md-3">
+<tal:getBrain define="catalog python:context.portal_catalog;
+                      folder_path python:'/'.join(context.getParentNode().getPhysicalPath());
+                      brain python:catalog({'portal_type':'prome.content.normalpage',
+                                            'path':{'query': folder_path, 'depth': 1},
+                                           }, sort_on='created', sort_order='reverse',)[:10]">
+<h4>關鍵列表</h4>
+  <ul class="list icons">
+  <tal:getItem repeat="item brain">
+    <li>
+      <a tal:attributes="href item/getURL">
+        <i class="icon icon-chevron-right"></i>
+        <span tal:replace="item/Title" />
+      </a>
+    </li>
+  </tal:getItem>
+  </ul>
+<a href="/key_point" class="pull-right">...more</a>
+</tal:getBrain>
+            </div>
+
+            <div class="col-md-9">
+              <p class="lead">
+                <strong>摘要:</strong> <span tal:content="context/Description" />
+              </p>
+              <hr class="tall">
+              <div tal:content="structure context/body/raw">
+              </div>
+            </div>
+          </div>
+
+
+
+
+  </metal:content-core>
+</metal:main>
+
+</body>
+</html>
+

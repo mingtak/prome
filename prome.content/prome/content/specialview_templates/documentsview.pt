@@ -1,0 +1,79 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="prome.content">
+<body>
+
+<tal:comment tal:condition="nothing">
+    This is a sample view template. It will not be used for rendering the
+    content unless activated by creation of a view class with a matching name.
+</tal:comment>
+
+<metal:main fill-slot="content-core">
+  <metal:content-core define-macro="content-core">
+
+
+<div class="row">
+  <div class="col-md-11 col-md-offset-1">
+    <h4><span class="arrow vbr" />
+        <span tal:content="context/Description" />
+    </h4>
+  </div>
+</div>
+
+
+<tal:getBrain define="catalog python:context.portal_catalog;
+                      folder_path python:'/'.join(context.getPhysicalPath()).split('/index_html')[0];
+                      brain python:catalog({'portal_type':'Document',
+                                            'path':{'query': folder_path, 'depth': 1},
+                                           })">
+
+
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+    <table class="table table-hover">
+
+  <tal:getItem repeat="item brain">
+    <tal:getObject define="object python:item.getObject()">
+
+      <tr>
+        <td width="25%">
+          <tal:getSrc define='imgString object/@@images/leadImage/thumb;
+                      srcString python:imgString.split("src=\"")[1].split("\"")[0]'>
+            <a tal:attributes="href item/getURL">
+              <img class="img-thumbnail img-responsive" tal:attributes="src srcString">
+            </a>
+          </tal:getSrc>
+        </td>
+        <td>
+          <a tal:attributes="href item/getURL">
+            <h5 tal:content="item/Title" />
+          </a>
+          <p tal:content="item/Description" />
+          <a tal:attributes="href item/getURL">
+            <span class="label label-success pull-right" style="font-size:1em">詳情</span>
+          </a>
+        </td>
+      </tr>
+
+    </tal:getObject>
+  </tal:getItem>
+
+    </table>
+  </div>
+</div>
+
+
+
+</tal:getBrain>
+
+
+  </metal:content-core>
+</metal:main>
+
+</body>
+</html>
+
