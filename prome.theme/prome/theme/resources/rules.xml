@@ -86,6 +86,10 @@
            css:content-children="div#content-core"
            if-not-path="/" />
 
+  <before css:theme-children="div#content-core"
+           css:content="div#content"
+           css:if-not-content="div#content-core" />
+
   <!-- plone-secript -->
 
 

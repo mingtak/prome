@@ -45,8 +45,8 @@
               <div class="social-icons">
                 <ul class="social-icons">
                   <li class="facebook"><a href="http://www.facebook.com/" target="_blank" data-placement="bottom" rel="tooltip" title="Facebook">Facebook</a></li>
-                  <li class="twitter"><a href="http://www.twitter.com/" target="_blank" data-placement="bottom" rel="tooltip" title="Twitter">Twitter</a></li>
-                  <li class="linkedin"><a href="http://www.linkedin.com/" target="_blank" data-placement="bottom" rel="tooltip" title="Linkedin">Linkedin</a></li>
+                  <li class="googleplus"><a href="http://www.google.com/" target="_blank" data-placement="bottom" rel="tooltip" title="Google+">Google +</a></li>
+                  <li class="mail"><a href="mailto:" target="_blank" data-placement="bottom" rel="tooltip" title="Send mailLinkedin">Mail</a></li>
                 </ul>
               </div>
             </div>
