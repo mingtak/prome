@@ -15,7 +15,7 @@
 
 
         <div class="container">
-         <hr class="tall">
+<!-- <hr class="tall"> -->
          <div class="row">
            <div class="col-md-9">
              <div class="row">
@@ -87,27 +87,26 @@
                    </ul>
                    <div class="tab-content">
 <tal:check condition="python:len(tabTitle) > 0">
-                     <div class="tab-pane active" id="tab_id_1" tal:content="structure context/tab_1_body/raw">
+                     <div class="tab-pane active" id="tab_id_1" tal:content="structure python:getattr(context.tab_1_body, 'raw', '')">
                      </div>
 </tal:check>
 
 <tal:check condition="python:len(tabTitle) > 1">
-                     <div class="tab-pane" id="tab_id_2" tal:content="structure context/tab_2_body/raw">
+                     <div class="tab-pane" id="tab_id_2" tal:content="structure python:getattr(context.tab_2_body, 'raw', '')">
                      </div>
 </tal:check>
 <tal:check condition="python:len(tabTitle) > 2">
-                     <div class="tab-pane" id="tab_id_3" tal:content="structure context/tab_3_body/raw">
+                     <div class="tab-pane" id="tab_id_3" tal:content="structure python:getattr(context.tab_3_body, 'raw', '')">
                      </div>
 </tal:check>
 <tal:check condition="python:len(tabTitle) > 3">
-                     <div class="tab-pane" id="tab_id_4" tal:content="structure context/tab_4_body/raw">
+                     <div class="tab-pane" id="tab_id_4" tal:content="structure python:getattr(context.tab_4_body, 'raw', '')">
                      </div>
 </tal:check>
 <tal:check condition="python:len(tabTitle) > 4">
-                     <div class="tab-pane" id="tab_id_5" tal:content="structure context/tab_5_body/raw">
+                     <div class="tab-pane" id="tab_id_5" tal:content="structure python:getattr(context.tab_5_body, 'raw', '')">
                      </div>
 </tal:check>
-
 
 
 

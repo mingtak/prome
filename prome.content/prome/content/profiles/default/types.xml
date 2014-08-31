@@ -8,6 +8,7 @@
   -->
 <object name="portal_types" meta_type="Plone Types Tool">
   <!-- -*- extra stuff goes here -*- -->
+  <object name="prome.content.headerandfooter" meta_type="Dexterity FTI" />
   <object name="prome.content.normalpage" meta_type="Dexterity FTI" />
   <object name="prome.content.specialview" meta_type="Dexterity FTI" />
   <object name="prome.content.classintro" meta_type="Dexterity FTI" />

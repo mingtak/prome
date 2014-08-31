@@ -36,6 +36,11 @@ class ISlide(form.Schema, IImageScaleTraversable):
         required=True,
     )
 
+    slidesUrl = schema.Text(
+        title=_(u"Slides Url link"),
+        description=_(u'Slides url link setting, one line, one url, must be one to one.'),
+        required=True,
+    )
 
     belowSlideTextLine1 = schema.TextLine(
         title=_(u'Below slide text line 1'),

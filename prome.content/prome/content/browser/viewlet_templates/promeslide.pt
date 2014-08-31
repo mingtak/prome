@@ -9,8 +9,10 @@
                     <div id="nivoSlider" class="nivoSlider">
 
 <tal:slideImages repeat="imageObject python:slideItem.getObject().slides">
-<img tal:define="scales imageObject/to_object/@@images"
-     tal:replace="structure python:scales.tag('image', scales='slide', direction='down')" />
+ <a tal:attributes="href python:slideItem.getObject().slidesUrl.split()[repeat['imageObject'].index]">
+    <img tal:define="scales imageObject/to_object/@@images"
+         tal:replace="structure python:scales.tag('image', scales='slide', direction='down')" />
+ </a>
 </tal:slideImages>
 
                     </div>

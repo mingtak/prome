@@ -1,0 +1,24 @@
+<tal:checkPortalType condition="python:context.portal_type != 'FormFolder'">
+<tal:checkRole condition="python:not (request['AUTHENTICATED_USER'].has_role('Manager') or request['AUTHENTICATED_USER'].has_role('Editor'))">
+  <div id="promeRowRight">
+    <tal:getBrain define="catalog python:context.portal_catalog;
+                          brain python:catalog({'portal_type':'Document', 'path':'/pm-seminar/media_center'},
+                                               sort_on='modified', sort_order='reverse')[:5]">
+<h2>最新消息</h2>
+
+                    <div class="feature-box" tal:repeat="item brain">
+                      <div class="feature-box-icon comments-color">
+                        <i class="icon icon-2x icon-comments-o"></i>
+                      </div>
+                      <div class="feature-box-info">
+                        <a tal:attributes="href item/getURL">
+                          <h4 class="shorter" tal:content="item/Title">prome here</h4>
+                        </a>
+                        <p class="tall" tal:content="item/Description">Lorem ipsum dolor sit amet, consectetur adip.</p>
+                      </div>
+                    </div>
+
+    </tal:getBrain>
+  </div>
+</tal:checkRole>
+</tal:checkPortalType>

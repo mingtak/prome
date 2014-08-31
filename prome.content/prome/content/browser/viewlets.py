@@ -29,5 +29,10 @@ class PromeRowLeft(grok.Viewlet):
 class PromeRowMiddle(grok.Viewlet):
     grok.viewletmanager(IAboveContentTitle)
 
+class PromeRowRight(grok.Viewlet):
+    grok.viewletmanager(IAboveContentTitle)
+
+class PageHeader(grok.Viewlet):
+    grok.viewletmanager(IPortalHeader)
 
 #下列可再新增viewlet, 可用的interface可查詢 plone.app.layout.viewlets.interfaces

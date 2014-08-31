@@ -63,7 +63,7 @@
 <h3 tal:content="item/Title"></h3>
 <p>
   <a tal:attributes="href item/getURL">
-    <img tal:replace="structure object/@@images/image/thumb" />
+    <img tal:replace="structure object/@@images/image/mini" />
   </a>
 </p><br/>
     </tal:getObject>

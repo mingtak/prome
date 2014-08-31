@@ -1,0 +1,63 @@
+<model xmlns="http://namespaces.plone.org/supermodel/schema"
+       xmlns:indexer="http://namespaces.plone.org/supermodel/indexer"
+       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+       i18n:domain="plone">
+    <schema>
+      <field name="text" type="plone.app.textfield.RichText" indexer:searchable="true">
+        <description />
+        <required>False</required>
+        <title i18n:translate="">Text</title>
+      </field>
+      <field name="leadImage" type="plone.namedfile.field.NamedBlobImage" indexer:searchable="false">
+        <description />
+        <required>True</required>
+        <title i18n:translate="">Cover image</title>
+      </field>
+      <field name="image1" type="plone.namedfile.field.NamedBlobImage" indexer:searchable="false">
+        <description />
+        <required>False</required>
+        <title i18n:translate="">content image1</title>
+      </field>
+      <field name="image2" type="plone.namedfile.field.NamedBlobImage" indexer:searchable="false">
+        <description />
+        <required>False</required>
+        <title i18n:translate="">content image2</title>
+      </field>
+
+      <field name="tabTitles" type="zope.schema.Text" indexer:searchable="false">
+        <description />
+        <required>False</required>
+        <title i18n:translate="">Tab Titles</title>
+      </field>
+
+      <field name="tab_1_body" type="plone.app.textfield.RichText" indexer:searchable="true">
+        <description />
+        <required>False</required>
+        <title i18n:translate="">Tab 1 content text</title>
+      </field>
+
+      <field name="tab_2_body" type="plone.app.textfield.RichText" indexer:searchable="true">
+        <description />
+        <required>False</required>
+        <title i18n:translate="">Tab 2 content text</title>
+      </field>
+
+      <field name="tab_3_body" type="plone.app.textfield.RichText" indexer:searchable="true">
+        <description />
+        <required>False</required>
+        <title i18n:translate="">Tab 3 content text</title>
+      </field>
+
+      <field name="tab_4_body" type="plone.app.textfield.RichText" indexer:searchable="true">
+        <description />
+        <required>False</required>
+        <title i18n:translate="">Tab 4 content text</title>
+      </field>
+
+      <field name="tab_5_body" type="plone.app.textfield.RichText" indexer:searchable="true">
+        <description />
+        <required>False</required>
+        <title i18n:translate="">Tab 5 content text</title>
+      </field>
+    </schema>
+</model>

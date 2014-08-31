@@ -1,0 +1,18 @@
+<tal:checkRole condition="python:not (request['AUTHENTICATED_USER'].has_role('Manager') or request['AUTHENTICATED_USER'].has_role('Editor'))">
+<header tal:define="catalog python:context.portal_catalog;
+                    item python:catalog(portal_type='prome.content.headerandfooter')[0].getObject()">
+<nav>
+<ul class="nav nav-pills nav-top">
+	<li>
+		<a tal:attributes="href item/header_aboutus_url"><i class="icon icon-angle-right"></i>關於博明</a>
+	</li>
+	<li>
+		<a href="#footer"><i class="icon icon-angle-right"></i>聯絡我們</a>
+	</li>
+	<li class="phone">
+		<span><i class="icon icon-phone"></i><i tal:replace="item/header_tel">04-22212773</i></span>
+	</li>
+</ul>
+</nav>
+</header>
+</tal:checkRole>

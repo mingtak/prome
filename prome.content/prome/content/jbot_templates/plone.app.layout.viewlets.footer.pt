@@ -5,8 +5,9 @@
             <div class="footer-ribon">
               <span>Get in Touch</span>
             </div>
-
-            <div class="col-md-3">
+<tal:getHeaderAndFooter define="catalog python:context.portal_catalog;
+                                item python:catalog(portal_type='prome.content.headerandfooter')[0].getObject()">
+            <div class="col-md-3" tal:content="structure item/footer_block_1/raw">
               <div class="newsletter">
                 <h4>台中總校</h4>
                 <ul class="contact">
@@ -18,7 +19,7 @@
               </div>
             </div>
 
-            <div class="col-md-3">
+            <div class="col-md-3" tal:content="structure item/footer_block_2/raw">
               <div class="newsletter">
                 <h4>花蓮分班</h4>
                 <ul class="contact">
@@ -29,7 +30,7 @@
               </div>
             </div>
 
-            <div class="col-md-3">
+            <div class="col-md-3" tal:content="structure item/footer_block_3/raw">
               <div class="newsletter">
                 <h4>嘉義分班</h4>
                 <ul class="contact">
@@ -40,7 +41,7 @@
               </div>
             </div>
 
-            <div class="col-md-3">
+            <div class="col-md-3" tal:content="structure item/footer_block_4/raw">
               <h4>Follow Us</h4>
               <div class="social-icons">
                 <ul class="social-icons">
@@ -50,6 +51,7 @@
                 </ul>
               </div>
             </div>
+</tal:getHeaderAndFooter>
           </div>
         </div>
 </tal:checkRole>

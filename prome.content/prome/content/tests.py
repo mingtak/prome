@@ -52,6 +52,14 @@ def test_suite():
 
         # -*- extra stuff goes here -*-
 
+        # Integration tests for HeaderAndFooter
+        ztc.ZopeDocFileSuite(
+            'HeaderAndFooter.txt',
+            package='prome.content',
+            optionflags = OPTION_FLAGS,
+            test_class=TestCase),
+
+
         # Integration tests for NormalPage
         ztc.ZopeDocFileSuite(
             'NormalPage.txt',

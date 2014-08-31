@@ -14,7 +14,8 @@ prome.portlet.egg-info/top_level.txt
 prome/portlet/__init__.py
 prome/portlet/tests.py
 prome/portlet/portlets/__init__.py
-prome/portlet/portlets/sidead.py
+prome/portlet/portlets/sideadathomepage.py
+prome/portlet/portlets/sideadatotherpages.py
 prome/portlet/tests/__init__.py
 prome/portlet/tests/base_sidead.py
 prome/portlet/tests/test_sidead.py

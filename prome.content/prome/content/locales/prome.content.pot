@@ -1,0 +1,267 @@
+# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
+# SOME DESCRIPTIVE TITLE.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2014-08-30 17:47+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: prome.content\n"
+
+#: ./sidead.py:36
+msgid "AD Image"
+msgstr ""
+
+#: ./profiles/default/types/prome.content.sidead.xml
+msgid "AD at sidebar"
+msgstr ""
+
+#: ./headerandfooter.py:28
+msgid "About us url"
+msgstr ""
+
+#: ./slide.py:46
+msgid "Below slide text line 1"
+msgstr ""
+
+#: ./slide.py:52
+msgid "Below slide text line 2"
+msgstr ""
+
+#: ./slide.py:57
+msgid "Button Url"
+msgstr ""
+
+#: ./slide.py:58
+msgid "Button Url, must include http://"
+msgstr ""
+
+#: ./slide.py:47
+msgid "Can use \"em\" tag, to highlight inside text"
+msgstr ""
+
+#: ./classintro.py:36
+msgid "Class 1 image"
+msgstr ""
+
+#: ./classintro.py:42
+msgid "Class 1 title"
+msgstr ""
+
+#: ./classintro.py:47
+msgid "Class 2 image"
+msgstr ""
+
+#: ./classintro.py:53
+msgid "Class 2 title"
+msgstr ""
+
+#: ./classintro.py:58
+msgid "Class 3 image"
+msgstr ""
+
+#: ./classintro.py:64
+msgid "Class 3 title"
+msgstr ""
+
+#: ./classintro.py:31
+msgid "Class intro description"
+msgstr ""
+
+#: ./classintro.py:26
+msgid "Class intro title"
+msgstr ""
+
+#: ./profiles/default/types/prome.content.classintro.xml
+msgid "Class introduction content type"
+msgstr ""
+
+#: ./profiles/default/types/prome.content.classintro.xml
+msgid "ClassIntro"
+msgstr ""
+
+#: ./profiles/default/types/prome.content.headerandfooter.xml
+msgid "HeaderAndFooter"
+msgstr ""
+
+#: ./classintro.py:94
+msgid "Image height must be 145px"
+msgstr ""
+
+#: ./classintro.py:92
+msgid "Image width must be 145px"
+msgstr ""
+
+#: ./classintro.py:81
+msgid "Input per line one url, and must be mapping to newClass field."
+msgstr ""
+
+#: ./slide.py:63
+msgid "Learn more Url"
+msgstr ""
+
+#: ./slide.py:64
+msgid "Learn more Url, must include http://"
+msgstr ""
+
+#: ./classintro.py:80
+msgid "New class URL"
+msgstr ""
+
+#: ./profiles/default/types/prome.content.normalpage.xml
+msgid "NormalPage"
+msgstr ""
+
+#: ./headerandfooter.py:40
+msgid "Page footer, block 1"
+msgstr ""
+
+#: ./headerandfooter.py:41
+msgid "Page footer, block 1, must be html format"
+msgstr ""
+
+#: ./headerandfooter.py:46
+msgid "Page footer, block 2"
+msgstr ""
+
+#: ./headerandfooter.py:47
+msgid "Page footer, block 2, must be html format"
+msgstr ""
+
+#: ./headerandfooter.py:52
+msgid "Page footer, block 3"
+msgstr ""
+
+#: ./headerandfooter.py:53
+msgid "Page footer, block 3, must be html format"
+msgstr ""
+
+#: ./headerandfooter.py:58
+msgid "Page footer, block 4"
+msgstr ""
+
+#: ./headerandfooter.py:59
+msgid "Page footer, block 4, must be html format"
+msgstr ""
+
+#: ./profiles/default/types/prome.content.headerandfooter.xml
+msgid "Page header and footer information setup"
+msgstr ""
+
+#: ./headerandfooter.py:35
+msgid "Page header, TEL Number"
+msgstr ""
+
+#: ./headerandfooter.py:29
+msgid "Page header, about us, link url, must include http://"
+msgstr ""
+
+#: ./classintro.py:37
+msgid "Select class image, the image size must be width:height as 145:145"
+msgstr ""
+
+#: ./classintro.py:70
+msgid "Select new class image, the image size must be width:height as 338:338"
+msgstr ""
+
+#: ./slide.py:30
+msgid "Select slide image, the image size must be width:height as 1140:430"
+msgstr ""
+
+#: ./sidead.py:29
+msgid "Show at home page"
+msgstr ""
+
+#: ./profiles/default/types/prome.content.sidead.xml
+msgid "SideAd"
+msgstr ""
+
+#: ./profiles/default/types/prome.content.slide.xml
+msgid "Slide"
+msgstr ""
+
+#: ./profiles/default/types/prome.content.slide.xml
+msgid "Slide Show for Home Page"
+msgstr ""
+
+#: ./slide.py:29
+msgid "Slide show images"
+msgstr ""
+
+#: ./slide.py:40
+msgid "Slides Url link"
+msgstr ""
+
+#: ./slide.py:41
+msgid "Slides url link setting, one line, one url, must be one to one."
+msgstr ""
+
+#: ./profiles/default/types/prome.content.specialview.xml
+msgid "SpecialView"
+msgstr ""
+
+#: ./profiles/default/types/prome.content.youtubevideo.xml
+msgid "Youtube Video iframe tag"
+msgstr ""
+
+#: ./youtubevideo.py:29
+msgid "Youtube iframe tag"
+msgstr ""
+
+#: ./youtubevideo.py:30
+msgid "Youtube video share, iframe tag"
+msgstr ""
+
+#: ./profiles/default/types/prome.content.youtubevideo.xml
+msgid "YoutubeVideo"
+msgstr ""
+
+#: ./normalpage.py:26
+msgid "detail text"
+msgstr ""
+
+#: ./sidead.py:30
+msgid "if not checked, this ad will not show at home page, but will show at other pages"
+msgstr ""
+
+#: ./sidead.py:42
+msgid "input ad url, include http://"
+msgstr ""
+
+#: ./classintro.py:69
+msgid "new class images"
+msgstr ""
+
+#: ./profiles/default/types/prome.content.normalpage.xml
+msgid "normal page document"
+msgstr ""
+
+#: ./profiles/default/types/prome.content.normalpage.xml
+msgid "normal view"
+msgstr ""
+
+#: ./sidead.py:41
+msgid "side AD Url"
+msgstr ""
+
+#: ./sidead.py:35
+msgid "side AD image"
+msgstr ""
+
+#: ./profiles/default/types/prome.content.specialview.xml
+msgid "special views for prome content type"
+msgstr ""
+
+#: ./headerandfooter.py:34
+msgid "tel number"
+msgstr ""
+

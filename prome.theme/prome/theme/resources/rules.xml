@@ -30,7 +30,8 @@
   <!-- plone-dmsearch input box -->
   <replace css:theme-children="#dmsearch" css:content-children="#plone-dmsearch" />
 
-  <!-- footer -->
+  <!-- header and footer -->
+  <replace css:theme="header nav ul.nav.nav-pills.nav-top" css:content="header nav ul.nav.nav-pills.nav-top" />
   <replace css:theme="footer" css:content="footer" />
 
   <!-- plone-home-slide, height要去掉，否則slide會錯誤-->
@@ -54,6 +55,12 @@
   <replace css:theme-children="#promeRowMiddle"
            css:content-children="#promeRowMiddle" />
   <drop css:theme="#promeRowMiddle" if-not-path="/" />
+
+  <!-- promeRowRight -->
+  <replace css:theme-children="#promeRowRight"
+           css:content-children="#promeRowRight" />
+  <drop css:theme="#promeRowRight" if-not-path="/" />
+
 
   <!-- promeSideAdAtHomePage -->
   <replace css:theme-children="#promeSideAdAtHomePage"

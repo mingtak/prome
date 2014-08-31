@@ -1,7 +1,8 @@
 <?xml version="1.0"?>
 <object name="prome.content.normalpage"
    meta_type="Dexterity FTI"
-   i18n:domain="prome.content" xmlns:i18n="http://xml.zope.org/namespaces/i18n">
+   xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+   i18n:domain="prome.content">
 
   <!-- Basic metadata -->
   <property name="title" i18n:translate="">NormalPage</property>
@@ -29,7 +30,7 @@
   <property name="default_view">view</property>
   <property name="view_methods">
    <element value="view"/>
-   <element value="normal view"/>
+   <element value="normal view" i18n:attributes="value 'normal view'"/>
   </property>
   <property name="default_view_fallback">False</property>
   <property name="add_permission">cmf.AddPortalContent</property>
