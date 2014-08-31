@@ -13,6 +13,7 @@ prome.content.egg-info/requires.txt
 prome.content.egg-info/top_level.txt
 prome/content/__init__.py
 prome/content/classintro.py
+prome/content/headerandfooter.py
 prome/content/normalpage.py
 prome/content/sidead.py
 prome/content/slide.py

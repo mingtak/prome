@@ -1,4 +1,4 @@
-<tal:checkPortalType condition="python:context.portal_type != 'FormFolder'">
+<tal:checkPortalType condition="python:context.portal_type != 'FormFolder' and context.portal_type != 'FormThanksPage'">
 <tal:checkRole condition="python:not (request['AUTHENTICATED_USER'].has_role('Manager') or request['AUTHENTICATED_USER'].has_role('Editor'))">
   <div id="promeRowLeft">
     <tal:getBrain define="catalog python:context.portal_catalog;
