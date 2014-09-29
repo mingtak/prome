@@ -60,11 +60,20 @@ class IHeaderAndFooter(form.Schema, IImageScaleTraversable):
         required=True,
     )
 
+    facebookLink = schema.TextLine(
+        title=_(u'Facebook URL'),
+        required=False,
+    )
 
+    googleLink = schema.TextLine(
+        title=_(u'Google+ URL'),
+        required=False,
+    )
 
-
-
-
+    emailAddress = schema.TextLine(
+        title=_(u'Email address'),
+        required=False,
+    )
 
 
 class HeaderAndFooter(Container):

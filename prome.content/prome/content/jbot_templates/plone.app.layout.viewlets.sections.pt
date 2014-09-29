@@ -6,11 +6,12 @@
 -->
         <div class="navbar-collapse nav-main-collapse collapse">
           <div class="container">
-            <div class="social-icons">
+            <div class="social-icons" tal:define="catalog python:context.portal_catalog;
+                                                  item python:catalog(portal_type='prome.content.headerandfooter')[0].getObject()">
               <ul class="social-icons">
-                <li class="facebook"><a href="http://www.facebook.com/" target="_blank" title="Facebook">Facebook</a></li>
-                <li class="googleplus"><a href="http://www.twitter.com/" target="_blank" title="Google+">Google+</a></li>
-                <li class="mail"><a href="mailto:" target="_blank" title="Send Mail">Send Mail</a></li>
+                <li class="facebook"><a tal:attributes="href item/facebookLink" target="_blank" title="Facebook">Facebook</a></li>
+                <li class="googleplus"><a tal:attributes="href item/googleLink" target="_blank" title="Google+">Google+</a></li>
+                <li class="mail"><a tal:attributes="href string:mailto:${item/emailAddress}" target="_blank" title="Send Mail">Send Mail</a></li>
               </ul>
             </div>
 
